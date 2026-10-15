@@ -196,8 +196,8 @@ document.querySelector('#password-form').addEventListener('submit', async (event
 imageInput.addEventListener('change', () => {
   const file = imageInput.files[0];
   if (!file) return;
-  if (file.size > 4 * 1024 * 1024) {
-    alert('Das Bild darf höchstens 4 MB groß sein.');
+  if (file.size > 1024 * 1024) {
+    alert('Das Bild darf höchstens 1 MB groß sein.');
     imageInput.value = '';
     return;
   }

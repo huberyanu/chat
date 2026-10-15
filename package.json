@@ -1,0 +1,15 @@
+{
+  "name": "gruppenraum-chat",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create gruppenraum-chat",
+    "db:migrate:local": "wrangler d1 migrations apply gruppenraum-chat --local",
+    "db:migrate:remote": "wrangler d1 migrations apply gruppenraum-chat --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.0"
+  }
+}

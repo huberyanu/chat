@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "huberyanu-chat",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-15",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "gruppenraum-chat",
+      "database_id": "f586986e-c42f-4dbe-b26c-78efba9feccd",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
