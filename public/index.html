@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#182b2a">
+  <title>Gruppenchat</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Gruppenchat Startseite">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>gruppen<span class="brand-light">raum</span></span>
+      </a>
+      <div class="section-label">DEINE RÄUME <span>03</span></div>
+      <nav class="room-list" id="room-list" aria-label="Gruppenchats"></nav>
+      <div class="sidebar-note">
+        <span class="online-dot"></span>
+        <span>Gemeinsam im Gespräch</span>
+      </div>
+      <div class="profile">
+        <div class="avatar avatar-you" id="profile-avatar">G</div>
+        <label class="name-field">
+          <span>DEIN NAME</span>
+          <input id="name-input" maxlength="32" placeholder="Zum Beispiel Alex" autocomplete="nickname">
+        </label>
+      </div>
+    </aside>
+
+    <section class="chat-panel" aria-label="Gruppenchat">
+      <header class="chat-header">
+        <div class="room-symbol" id="room-symbol">01</div>
+        <div class="room-heading">
+          <div class="eyebrow">GRUPPENCHAT</div>
+          <h1 id="room-title">Gruppe 1</h1>
+        </div>
+        <div class="connection" id="connection"><span class="online-dot"></span><span>Verbunden</span></div>
+      </header>
+
+      <div class="locked-state" id="locked-state">
+        <div class="lock-mark" aria-hidden="true">✳</div>
+        <p class="eyebrow">PRIVATER RAUM</p>
+        <h2>Dieser Chat ist geschützt.</h2>
+        <p>Gib das Gruppenpasswort ein, um beizutreten.</p>
+        <button class="primary-button" id="unlock-button" type="button">Gruppe entsperren <span aria-hidden="true">↗</span></button>
+      </div>
+
+      <div class="messages" id="messages" aria-live="polite" hidden>
+        <div class="date-divider"><span>Nachrichten in <b id="divider-group">Gruppe 1</b></span></div>
+        <div class="message-list" id="message-list"></div>
+      </div>
+
+      <form class="composer" id="composer" hidden>
+        <div class="attachment-preview" id="attachment-preview" hidden></div>
+        <div class="composer-box">
+          <label class="image-button" for="image-input" title="Bild anhängen" aria-label="Bild anhängen">＋</label>
+          <input id="image-input" type="file" accept="image/png,image/jpeg,image/gif,image/webp" hidden>
+          <textarea id="message-input" rows="1" maxlength="2000" placeholder="Schreibe eine Nachricht …" aria-label="Nachricht"></textarea>
+          <button class="send-button" type="submit" aria-label="Nachricht senden" title="Senden"><span aria-hidden="true">↑</span></button>
+        </div>
+        <div class="composer-hint"><span>Enter zum Senden</span><span>PNG, JPG, GIF oder WebP</span></div>
+      </form>
+    </section>
+  </main>
+
+  <dialog id="name-dialog" class="password-dialog">
+    <form id="name-form">
+      <div class="dialog-kicker">WILLKOMMEN IM GRUPPENRAUM</div>
+      <h2>Wie sollen wir dich nennen?</h2>
+      <p>Dein Name steht über deinen Nachrichten und bleibt in diesem Browser gespeichert.</p>
+      <label class="password-label" for="name-entry">DEIN NAME</label>
+      <input id="name-entry" maxlength="32" autocomplete="name" required>
+      <p class="form-error" id="name-error" role="alert"></p>
+      <button class="primary-button dialog-submit" type="submit">Weiter zum Chat <span aria-hidden="true">↗</span></button>
+    </form>
+  </dialog>
+
+  <dialog id="password-dialog" class="password-dialog">
+    <form id="password-form">
+      <button class="dialog-close" type="button" id="close-dialog" aria-label="Schließen">×</button>
+      <div class="dialog-kicker">ZUGANG ERFORDERLICH</div>
+      <h2 id="dialog-title">Gruppe 1</h2>
+      <p>Das Passwort schaltet nur diesen Gruppenchat frei.</p>
+      <label class="password-label" for="password-input">GRUPPENPASSWORT</label>
+      <input id="password-input" type="password" inputmode="numeric" autocomplete="current-password" required>
+      <p class="form-error" id="form-error" role="alert"></p>
+      <button class="primary-button dialog-submit" type="submit">Chat öffnen <span aria-hidden="true">↗</span></button>
+    </form>
+  </dialog>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

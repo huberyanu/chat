@@ -1,0 +1,5 @@
+/chat-data.json
+/local-secrets.ps1
+/.env
+/.env.*
+!/.env.example
