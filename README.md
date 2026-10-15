@@ -22,6 +22,8 @@ Die Freischaltung und der Name werden pro Browser gespeichert. Beim lokalen Powe
 
 Die Cloudflare-Worker-Version verwendet Workers Static Assets für die Oberfläche und eine D1-Datenbank für Nachrichten und Bilder. Für Bilder gilt dort ein Limit von 1 MB. Die vorhandenen Nachrichten in der lokalen `chat-data.json` werden nicht automatisch in die Cloud übertragen.
 
+Live-Adresse: https://huberyanu-chat.gruppenraum-chat.workers.dev
+
 1. Installiere Node.js LTS und führe `npm install` aus.
 2. Melde dich mit `npx wrangler login` bei Cloudflare an.
 3. Registriere im Cloudflare-Dashboard einmalig eine freie `workers.dev`-Konto-Subdomain unter Workers & Pages. Ohne diese Konto-Einstellung wird der Worker-Link nicht aufgelöst. Danach die Datenbank mit `npx wrangler d1 create gruppenraum-chat` erstellen und die ausgegebene `database_id` in `wrangler.jsonc` übernehmen.
